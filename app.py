@@ -3,6 +3,7 @@ from flask_cors import CORS
 import threading
 import Drowsiness_detector
 import pygame
+import gunicorn
 
 #Intialize Pygame
 pygame.init()
@@ -31,5 +32,5 @@ def send_static(path):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
 
