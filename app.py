@@ -2,7 +2,15 @@ from flask import Flask, render_template, jsonify, send_from_directory
 from flask_cors import CORS
 import threading
 import Drowsiness_detector
+import pygame
 
+#Intialize Pygame
+pygame.init()
+
+#load the alram sound
+alarm_sound = pygame.mixer.Sound("alram.wav")
+
+#flask app initialization
 app = Flask(__name__, static_url_path="/static")
 CORS(app)
 
@@ -23,5 +31,5 @@ def send_static(path):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(debug=True)
 
