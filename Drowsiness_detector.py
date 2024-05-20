@@ -28,7 +28,6 @@ def detect_drowsiness():
     alarm_sound = pygame.mixer.Sound("alram.wav")
 
     cap = cv2.VideoCapture(0)
-    print(cv2.VideoCapture(0).getBackendName()) 
     flag = 0
     while True:
         ret, frame = cap.read()
